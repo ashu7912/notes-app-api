@@ -11,13 +11,13 @@ const authMiddleware = async (req, res, next) => {
   try {
     const authHeader =  req.header('Authorization');
     if (!authHeader) {
-      return res.status(401).json({ message: 'Authorization header missing' });
+      return res.status(401).json({ message: response.authHeaderMissing });
     }
 
     // Extract the token from the authorization header
     const token = authHeader.split(' ')[1];
     if (!token) {
-      return res.status(401).json({ message: 'Token not found in authorization header' });
+      return res.status(401).json({ message: response.tokenNotFound });
     }
 
     // Query the database to check if the token is valid

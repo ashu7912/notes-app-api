@@ -20,7 +20,7 @@ const loginUser = async (req, res) => {
     try {
         const { email, password } = req.body;
         const userObject = await findByCredentials(email, password);
-        res.status(201).send({
+        res.status(200).send({
             ...response.successObject,
             message: response.userLoggedInMessage,
             data: userObject.user,

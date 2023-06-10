@@ -18,6 +18,9 @@ const noUsersFound = 'Invalid user!';
 const badRequest = 'Bad Request!';
 const unAuthorisedUser = 'Unauthorised User!';
 const invalidCredentials = 'Invalid credentials!';
+const pleaseAuthenticate = 'Please authenticate!';
+const authHeaderMissing = 'Authorization header missing';
+const tokenNotFound = 'Token not found in authorization header';
 // User Messages----------------------------
 
 
@@ -41,6 +44,9 @@ const noteDeletedMessage = 'Note deleted Successfully!';
     unAuthorisedUser,
     noUsersFound,
     badRequest,
+    pleaseAuthenticate,
+    authHeaderMissing,
+    tokenNotFound,
 
     noteTitleRequired,
     noteCreatedSuccess,
