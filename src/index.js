@@ -3,9 +3,10 @@ const userRoutes = require('./routers/userrouter');
 const noteRoutes = require('./routers/noterouter');
 const { createUserTable, createNotesTable } = require('./postgres/tables');
 const cors = require('cors');
+const evariables = require('./evariables/evariables');
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = evariables.port || 3000
 
 app.use(express.json())
 app.use(cors({

@@ -4,6 +4,7 @@ const pool = require('../postgres/db');
 
 const queries = require('../queries/userqueries');
 const response = require('../response/response');
+const evariables = require('../evariables/evariables');
 //Internal Files ------------------------------------
 
 
@@ -21,7 +22,7 @@ const authMiddleware = async (req, res, next) => {
     }
 
     // Query the database to check if the token is valid
-    const decoded = jwt.verify(token, 'thisisnoteapp');
+    const decoded = jwt.verify(token, evariables.jwt_secret);
     
     const userExist = await pool.query(queries.getUserByToken, [token]);
     if (!userExist.rows.length) {

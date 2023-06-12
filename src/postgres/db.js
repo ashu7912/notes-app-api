@@ -1,21 +1,15 @@
 const Pool = require('pg').Pool;
 //External Libraries --------------------------------
-
-// const pool = new Pool({
-//     user: 'postgres',
-//     host: 'localhost',
-//     database: 'notesappdb',
-//     password: '123456',
-//     port: 5432
-// })
+const evariables = require('../evariables/evariables');
 
 const pool = new Pool({
-    user: 'notesappdb_user',
-    host: 'dpg-ci2dmnrhp8u1a1a2ivs0-a',
-    database: 'notesappdb',
-    password: 'HwaPD6OAd3elYO9j8FbxPY3kUvls2Gyg',
-    port: 5432
+    user: evariables.user,
+    host: evariables.db_host,
+    database: evariables.database,
+    password: evariables.password,
+    port: evariables.db_port
 })
+process.env.MONGODB_URL
 
 
 module.exports = pool;
