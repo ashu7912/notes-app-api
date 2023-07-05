@@ -11,7 +11,7 @@ async function createUserTable() {
               email VARCHAR(255) NOT NULL,
               dob DATE,
               password TEXT NOT NULL,
-              token VARCHAR(255) NOT NULL
+              token TEXT NOT NULL
               )
               `;
         await pool.query(createTableQuery);
@@ -28,7 +28,7 @@ async function createNotesTable() {
             note_id SERIAL PRIMARY KEY,
             owner_id INTEGER NOT NULL,
             title VARCHAR(255) NOT NULL,
-            description VARCHAR(300),
+            description TEXT,
             shared_users INTEGER[]
             )
               `;
